@@ -1,7 +1,11 @@
 var elixir = require('laravel-elixir');
 
+require('laravel-elixir-rollup-official');
+
 elixir(function(mix) {
     mix.sass('laravel.scss', 'public/assets/css');
+
+    mix.rollup('laravel/index.js', 'public/assets/js/laravel.js');
 
     mix.scripts(
         [
@@ -13,11 +17,13 @@ elixir(function(mix) {
             'plugins/typeahead.js',
             'plugins/hogan.js',
             'plugins/mousetrap.js',
-            'laravel.js'
         ],
-        'public/assets/js/laravel.js',
-        'resources/assets/js/'
+        'public/assets/js/libs.js'
     );
 
-    mix.version(['assets/css/laravel.css', 'assets/js/laravel.js']);
+    mix.version([
+        'assets/css/laravel.css',
+        'assets/js/laravel.js',
+        'assets/js/libs.js',
+    ]);
 });

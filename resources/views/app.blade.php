@@ -64,6 +64,7 @@
 		@include('partials.algolia_template')
 	@endif
 
+	<script src="{{ elixir('assets/js/libs.js') }}"></script>
 	<script src="{{ elixir('assets/js/laravel.js') }}"></script>
 	<script src="/assets/js/viewport-units-buggyfill.js"></script>
 	<script>window.viewportUnitsBuggyfill.init();</script>
