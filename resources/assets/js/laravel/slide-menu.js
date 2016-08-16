@@ -7,7 +7,8 @@ export default function ($) {
         distanceX: '70%',
         forceMinHeight: true,
         minHeight: '2500px',
-        enableEscapeKey: true
+        enableEscapeKey: true,
+        afterPanelClose: () => $(document).trigger('scotch.closed'),
     }).show(); // show to avoid flash of content
 
     $('.toggle-slide').click(function() {
